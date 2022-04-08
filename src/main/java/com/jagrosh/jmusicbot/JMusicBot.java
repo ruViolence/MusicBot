@@ -90,7 +90,7 @@ public class JMusicBot
                 .setAlternativePrefix(config.getAltPrefix())
                 .setOwnerId(Long.toString(config.getOwnerId()))
                 .setEmojis(config.getSuccess(), config.getWarning(), config.getError())
-                .setHelpWord(config.getHelp())
+                .useHelpBuilder(false)
                 .setLinkedCacheSize(200)
                 .setGuildSettingsManager(settings)
                 .addCommands(
