@@ -16,6 +16,7 @@
 package com.jagrosh.jmusicbot.playlist;
 
 import com.jagrosh.jmusicbot.BotConfig;
+import com.jagrosh.jmusicbot.UrlWhiteList;
 import com.jagrosh.jmusicbot.utils.OtherUtil;
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
@@ -164,7 +165,7 @@ public class PlaylistLoader
             {
                 boolean last = i+1 == items.size();
                 int index = i;
-                manager.loadItemOrdered(name, items.get(i), new AudioLoadResultHandler() 
+                manager.loadItemOrdered(name, UrlWhiteList.fixUrl(items.get(i)), new AudioLoadResultHandler() 
                 {
                     private void done()
                     {
