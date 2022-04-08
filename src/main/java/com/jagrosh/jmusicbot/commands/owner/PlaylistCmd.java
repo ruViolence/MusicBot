@@ -52,7 +52,7 @@ public class PlaylistCmd extends OwnerCommand
     {
         StringBuilder builder = new StringBuilder(event.getClient().getWarning()+" Playlist Management Commands:\n");
         for(Command cmd: this.children)
-            builder.append("\n`").append(event.getClient().getPrefix()).append(name).append(" ").append(cmd.getName())
+            builder.append("\n`").append(bot.getConfig().getAltPrefix()).append(name).append(" ").append(cmd.getName())
                     .append(" ").append(cmd.getArguments()==null ? "" : cmd.getArguments()).append("` - ").append(cmd.getHelp());
         event.reply(builder.toString());
     }
